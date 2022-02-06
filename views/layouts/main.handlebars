@@ -1,0 +1,83 @@
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tech-Cat</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
+
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+
+  <body>
+    <section class="hero is-primary is-medium">
+      <!-- Hero head: will stick at the top -->
+      <div class="hero-head">
+        <nav class="navbar">
+          <div class="container">
+            <div class="navbar-brand">
+        
+      </div>
+
+      <!-- Hero content: will be in the middle -->
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <p class="title">
+            Tech-Cat
+          </p>
+          <p class="subtitle">
+            Meowdy Tech Blogs
+          </p>
+        </div>
+      </div>
+
+      <!-- Hero footer: will stick at the bottom -->
+      <div class="hero-foot">
+        <nav class="tabs">
+          <div class="container">
+            <ul>
+              <li class="is-active"><a>Overview</a></li>
+              <li><a href="/">Home</a></li>
+              <li><a>Dashboard</a></li>
+          {{#if loggedIn}}
+           <li> <a>Logout</a><li>
+          {{else}}
+            <li><a href="/login">Login</a></li>
+          {{/if}}
+              
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </section>
+
+    <div class="wrapper">
+      <main>
+        {{{body}}}
+      </main>
+
+    </div>
+
+    {{#if loggedIn}}
+      <script src="/javascript/logout.js"></script>
+    {{/if}}
+  
+  
+    <footer class="footer">
+    <div class="content has-text-centered">
+      <h1>Tech-Cat</h1>
+      <p>
+        by <a href="https://jgthms.com">bulma</a>. The source code is licensed
+        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+        is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+      </p>
+    </div>
+  </footer>
+  
+  
+  </body>
+
+</html>
