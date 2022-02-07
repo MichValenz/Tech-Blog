@@ -12,8 +12,8 @@
     <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
 
-  <body>
-    <section class="hero is-primary is-medium">
+  <body class="has-background-link-light">
+    <section class="hero is-primary is-medium has-background-danger">
       <!-- Hero head: will stick at the top -->
       <div class="hero-head">
         <nav class="navbar">
@@ -29,6 +29,7 @@
           <p class="subtitle">
             Meowdy Tech Blogs
           </p>
+      
         </div>
       </div>
 
@@ -41,7 +42,7 @@
               <li><a href="/">Home</a></li>
               <li><a>Dashboard</a></li>
           {{#if loggedIn}}
-           <li> <a>Logout</a><li>
+           <li> <a id="logout">Logout</a><li>
           {{else}}
             <li><a href="/login">Login</a></li>
           {{/if}}
@@ -64,9 +65,9 @@
     {{/if}}
   
   
-    <footer class="footer">
+    <footer class="footer has-background-grey-light">
     <div class="content has-text-centered">
-      <h1 class="title is-1">Tech-Cat</h1>
+      <h1 class="title is-4">Tech-Cat</h1>
       <p>
         by <a href="https://jgthms.com">bulma</a>. The source code is licensed
         <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
