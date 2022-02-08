@@ -1,5 +1,5 @@
-async function commentFormHandler(event) {
-  event.preventDefault();
+async function commentFormHandler(e) {
+  e.preventDefault();
 
   const comment_text = document
     .querySelector('textarea[name="comment-body"]')
