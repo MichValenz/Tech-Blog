@@ -5,7 +5,7 @@ const { Post, User, Comment } = require("../../models");
 // get all users
 router.get("/", (req, res) => {
   Post.findAll({
-    attributes: ["id", "post_url", "title", "created_at"],
+    attributes: ["id", "post_url", "title", "post_text", "created_at"],
     include: [
       {
         model: Comment,
@@ -33,7 +33,7 @@ router.get("/:id", (req, res) => {
     where: {
       id: req.params.id,
     },
-    attributes: ["id", "post_url", "title", "created_at"],
+    attributes: ["id", "post_url", "title", "post_text", "created_at"],
     include: [
       {
         model: Comment,
@@ -67,22 +67,9 @@ router.post("/", (req, res) => {
     Post.create({
       title: req.body.title,
       post_url: req.body.post_url,
+      post_text: req.body.post_text,
     })
       .then((dbPostData) => res.json(dbPostData))
-      .catch((err) => {
-        console.log(err);
-        res.status(500).json(err);
-      });
-  }
-});
-
-router.put("/upvote", (req, res) => {
-  if (req.session) {
-    Post.upvote(
-      { ...req.body, user_id: req.session.user_id },
-      { Comment, User }
-    )
-      .then((updatedVoteData) => res.json(updatedVoteData))
       .catch((err) => {
         console.log(err);
         res.status(500).json(err);
@@ -94,7 +81,9 @@ router.put("/:id", (req, res) => {
   Post.update(
     {
       title: req.body.title,
+      post_text: req.body.post_text,
     },
+
     {
       where: {
         id: req.params.id,

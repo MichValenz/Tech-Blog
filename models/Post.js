@@ -29,7 +29,12 @@ Post.init(
     //     key: "id",
     //   },
     // },
+    post_text: {
+      type: DataTypes.STRING(180),
+      allowNull: false,
+    },
   },
+
   {
     sequelize,
     freezeTableName: true,

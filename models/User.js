@@ -8,8 +8,6 @@ class User extends Model {
     return bcrypt.compareSync(loginPw, this.password);
   }
 }
-
-// define table columns and configuration
 User.init(
   {
     id: {
@@ -40,19 +38,14 @@ User.init(
   },
   {
     hooks: {
-      // set up beforeCreate lifecycle "hook" functionality
-      async beforeCreate(newUserData) {
-        newUserData.password = await bcrypt.hash(newUserData.password, 10);
-        return newUserData;
+      async beforeCreate(newUser) {
+        newUser.password = await bcrypt.hash(newUser.password, 8);
+        return newUser;
       },
 
-      // set up beforeUpdate lifecycle "hook" functionality
-      async beforeUpdate(updatedUserData) {
-        updatedUserData.password = await bcrypt.hash(
-          updatedUserData.password,
-          10
-        );
-        return updatedUserData;
+      async beforeUpdate(updatedUser) {
+        updatedUser.password = await bcrypt.hash(updatedUser.password, 8);
+        return updatedUser;
       },
     },
     sequelize,
