@@ -3,10 +3,9 @@ const sequelize = require("../config/connection");
 const { Post, User, Comment } = require("../models");
 const withAuth = require("../utils/auth");
 
-// get all posts for homepage
 router.get("/", withAuth, (req, res) => {
   Post.findAll({
-    attributes: ["id", "post_url", "title", "post-text", "created_at"],
+    attributes: ["id", "title", "post_text", "created_at"],
     include: [
       {
         model: Comment,
@@ -36,13 +35,12 @@ router.get("/", withAuth, (req, res) => {
     });
 });
 
-// get single post
 router.get("/post/:id", (req, res) => {
   Post.findOne({
     where: {
       id: req.params.id,
     },
-    attributes: ["id", "post_url", "title", "post_text", "created_at"],
+    attributes: ["id", "title", "post_text", "created_at"],
     include: [
       {
         model: Comment,

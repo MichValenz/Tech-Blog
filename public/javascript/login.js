@@ -17,7 +17,7 @@ async function signupFormHandler(e) {
     });
 
     if (response.ok) {
-      document.location.replace("/posts");
+      document.location.replace("/dashboard");
       console.log("success");
     } else {
       alert(response.statusText);
