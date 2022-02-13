@@ -1,7 +1,7 @@
-<article class="post">
+{{!-- <article class="post">
   <div class="title">
-    <a href="{{post_url}}" target="_blank">{{title}}</a>
-    <span>({{format_url post_url}})</span>
+    <a href="/post/{{id}}" target="_blank">{{title}}</a>
+
   </div>
   <div class="meta">
     <div class="text">
@@ -16,5 +16,34 @@
 
     <a href="/post/{{id}}">{{comments.length}}
       {{format_plural "Comment" comments.length}}</a>
+  </div>
+</article> --}}
+
+<article class= "post">
+    <div class="tile is-parent">
+      <article class="tile is-child notification is-danger">
+        <p class="title"><a href="/post/{{id}}" target="_blank">{{title}}</a></p>
+        <p class="subtitle">    
+          Posted by
+         {{User.username}}
+          on
+        {{format_date created_at}}
+        
+        </p>
+  <div class="content">
+          <!-- Content -->
+      <div class="text">
+        {{post_text}}
+      </div>
+      </div>
+  <div class="tile is-child box">
+      <p class="title">Comments</p>
+      <p> <a href="/post/{{id}}">{{comments.length}}
+      {{format_plural "Comment" comments.length}}</a></p>
+    
+   
+    </div>
+
+  <button class="button edit-button is-link is-light"><a href="/dashboard/edit/{{post.id}}">Edit Blog</a> </button>
   </div>
 </article>

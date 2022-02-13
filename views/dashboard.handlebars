@@ -1,15 +1,14 @@
+
+
 <section>
   <h2>Create New Blog</h2>
 
   <form class="new-post-form">
     <div>
-      <label for="post-title">Title</label>
+      <label for="post-title">Title</a></label>
       <input type="text" id="post-title" name="post-title" />
     </div>
-        <div>
-      <label for="post-url">Link</label>
-      <input id="post-url" name="post-url" />
-    </div>
+
     <div>
       <label for="post-text">Blog Post</label>
       <input id="post-text" name="post-text" />
@@ -26,11 +25,11 @@
     {{#each posts as |post|}}
     <li>
       {{> post-info post}}
-      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit Blog</a>
+     
     </li>
     {{/each}}
   </ol>
 </section>
 {{/if}}
 
-<script src="/javascript/add-.js"></script>
+<script src="/javascript/add-blog.js"></script>
