@@ -36,14 +36,17 @@
         {{post_text}}
       </div>
       </div>
+
+      {{#if loggedIn}}
   <div class="tile is-child box">
       <p class="title">Comments</p>
       <p> <a href="/post/{{id}}">{{comments.length}}
       {{format_plural "Comment" comments.length}}</a></p>
-    
+   
    
     </div>
 
   <button class="button edit-button is-link is-light"><a href="/dashboard/edit/{{post.id}}">Edit Blog</a> </button>
   </div>
+   {{/if}}
 </article>

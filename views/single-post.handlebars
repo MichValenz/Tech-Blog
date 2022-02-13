@@ -13,9 +13,15 @@
 </form>
 {{/if}}
 
+<div class="tile is-child box">
+
+<p class="title">Comments</p>
 {{> comments post.comments}}
 
+
+</div>
 {{#if loggedIn}}
 <script src="/javascript/comment.js"></script>
+
 
 {{/if}}
