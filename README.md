@@ -44,3 +44,7 @@ Need to reach me?
 
 - Email: michvalenz27@gmail.com
 - [GitHub](https://github.com/MichValenz/Tech-Blog)
+
+## Deployed App
+
+https://dry-retreat-70520.herokuapp.com/
