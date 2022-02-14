@@ -1,11 +1,14 @@
 <article>
-  <a href="/dashboard"> Return to Blog Dashboard</a>
+  <a href="/dashboard"> &larr;Return to Blog Dashboard</a>
   <h2>
     Edit Blog
   </h2>
   <form class="edit-blog-form">
     <div>
       <input name="blog-title" type="text" value="{{post.title}}" />
+    </div>
+    <div>
+      <input name="blog-text" type="text" value="{{post.post_text}}" />
     </div>
 
     <button type="submit">Save Blog</button>

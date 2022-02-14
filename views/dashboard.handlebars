@@ -25,7 +25,9 @@
     {{#each posts as |post|}}
     <li>
       {{> post-info post}}
-     
+  </div>
+  <button class="button edit-button is-link is-light"><a href="/dashboard/edit/{{post.id}}">Edit Blog</a> </button>
+  </div>
     </li>
     {{/each}}
   </ol>
